@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form">
+<h2>Car service</h2>
+<label>Service Type</label>
+<select id="serviceType">
+<option>Oil changed</option>
+<option>New tires</option>
+<option>Battery replacement</option>
+<option>Brake work</option>
+</select>
+
+<label>Service Price</label>
+<input type = "text" id="price"><br>
+<label>Discount Percentage</label>
+<input type = "text" id="discount"><br>
+<label>Final Price</label>
+<input type="text" id="finalPrice">
+<input type="button" value = "Final Price" onclick="allService()">
+
+
+
+
+
+
+
+</form>
+<script>
+
+function carService(){
+    this.serviceType = " ";
+    this.servicePrice = 0;
+    this.discountPercent = 0;
+}
+function allService(){
+    var obj = new carService
+    obj.serviceType =  document.getElementById("serviceType").value;
+if (obj.serviceType== "Oil changed"){
+    obj.servicePrice= 50;
+    obj.discountPercent = 5;
+}
+else if (obj.serviceType== "New tires"){
+    obj.servicePrice= 140;
+    obj.discountPercent = 10;
+}
+else if (obj.serviceType== "Battery replacement"){
+    obj.servicePrice= 120;
+    obj.discountPercent = 15;
+}
+else if (obj.serviceType== "Brake work"){
+    obj.servicePrice= 300;
+    obj.discountPercent = 20;
+}
+
+var finalPrice = obj.servicePrice-((obj.servicePrice*obj.discountPercent)/100)
+document.getElementById("finalPrice").value=finalPrice
+document.getElementById("price").value=obj.servicePrice
+document.getElementById("discount").value=obj.discountPercent
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+   
+</body>
+</html>
